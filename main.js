@@ -44,5 +44,5 @@ let namePerson = prompt('Имя пользователя');
 let input = (namePerson == 'Артём') ? 'Директор' :
   (namePerson == 'Максим') ? 'Преподаватель' :
   (namePerson) ? 'Студент' :
-  'Какой необычный возраст!';
+  '';
 console.log( input );

@@ -1,21 +1,48 @@
-let num = 266219;   // Объявляем числовую переменную
-num = String(num);  // Переводим её в строку
-let length = num.length;      // Узнаём к-во цифр
-num = Number(num);           // Переводим строку обратно в число
+'use strict'
+
+// Решение через многомерный массив:
+
+let days = [];
+days['ru'] = ['Пн, Вт, Ср, Чт, Пт, Сб, Вс'];
+days['en'] = ['Sunday, Monday, Tuesday, Wednesday, Thursday, Saturday'];
+let language = prompt ('Введите ваш язык. Ru / En');
+console.log(days[language]);
+
+
+// let x = prompt('ru / eng');
+
+//Решение через if
  
-let temp = 0;                  // Переменная для хранения цифр
-let result = 1;                // Временная переменная для выполнения умножения цифр между собой
- 
-for (let i = 0; i < length; i++) {
-  temp = num % 10;            // Сохраняем цифру в переменной
-  result *= temp;              // Складываем цифры числа
-  num = parseInt(num /10);   // Переходим к следующей цифре в числе
-}
-  
-let result2 = result ** 3; // Переменная, возводящая result в степень 3
-console.log(result2);  // Проверяем возведение в степень
 
-result2 = String(result2); // Преобразуем число в строку
+// if (x == 'ru') {
+//     console.log('Пн, Вт, Ср, Чт, Пт, Сб, Вс');
 
-alert(result2.slice(0,2)); // Выводим в модальное окно первые 2 цифры полученного от возведения в степень результата
+// } else if (x == 'en') {
+//     console.log('Sunday, Monday, Tuesday, Wednesday, Thursday, Saturday');
+// }
+// else 
+// {
+//     alert('Вы ввели неверное значение! Попробуйте ещё раз.')
+// }
 
+    
+// Switch-case:
+
+// switch(x) {
+//     case 'ru':
+//         console.log('Пн, Вт, Ср, Чт, Пт, Сб, Вс');
+//         break;
+//     case 'en':
+//         console.log('Sunday, Monday, Tuesday, Wednesday, Thursday, Saturday');
+//         break;
+// };
+
+
+// Вторая задача:
+let namePerson = prompt('Имя пользователя');
+
+let input = (namePerson == 'Артём') ? 'Директор' :
+  (namePerson == 'Максим') ? 'Преподаватель' :
+  (namePerson) ? 'Студент' :
+  'Какой необычный возраст!';
+console.log( input );

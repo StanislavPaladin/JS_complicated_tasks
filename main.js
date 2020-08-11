@@ -1,7 +1,7 @@
 'use strict'
 let b;
-function cutFunction(a) {
-    a = prompt();
+let a = prompt();
+function cutFunction() {
     b = a.split(' ').join('');
     if (typeof a != 'string') {
         alert('Введите строку');
@@ -14,4 +14,4 @@ function cutFunction(a) {
         console.log(b);
     }
 }
-cutFunction();
+cutFunction(a);

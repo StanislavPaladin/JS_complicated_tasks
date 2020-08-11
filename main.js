@@ -1,17 +1,18 @@
 'use strict'
-let b;
-let a = prompt();
+let output;
+let input = prompt();
 function cutFunction() {
-    b = a.split(' ').join('');
-    if (typeof a != 'string') {
-        alert('Введите строку');
+    output = input.split(' ').join('');
+    if (typeof input != 'string') {
+        alert ('Введите строку');
         return;
     }
-    else if (b.length >= 30) {
-        console.log((b.slice(0, 30)) + '...');
+    else if (output.length >= 30) {
+        return ((output.slice(0, 30)) + '...');
     } 
-    else if (b.length < 30) {
-        console.log(b);
+    else if (output.length < 30) {
+        return (output);
     }
 }
-cutFunction(a);
+cutFunction(input);
+console.log(cutFunction());

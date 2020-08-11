@@ -35,6 +35,8 @@ console.log(days[language]);
 //     case 'en':
 //         console.log('Sunday, Monday, Tuesday, Wednesday, Thursday, Saturday');
 //         break;
+//     default:
+//         alert('Неверное значение. ВВедите Ru или En')
 // };
 
 

@@ -1,9 +1,9 @@
 'use strict'
 let output;
-let input = prompt();
-function cutFunction() {
-    output = input.split(' ').join('');
-    if (typeof input != 'string') {
+let input = 'lol kek';
+function cutFunction(param) {
+    output = param.split(' ').join('');
+    if (typeof param != 'string') {
         alert ('Введите строку');
         return;
     }
@@ -14,5 +14,4 @@ function cutFunction() {
         return (output);
     }
 }
-cutFunction(input);
-console.log(cutFunction());
+console.log(cutFunction(input));

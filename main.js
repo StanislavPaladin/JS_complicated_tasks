@@ -14,10 +14,10 @@ console.log(days[language]);
 //Решение через if
  
 
-// if (x == 'ru') {
+// if (x === 'ru') {
 //     console.log('Пн, Вт, Ср, Чт, Пт, Сб, Вс');
 
-// } else if (x == 'en') {
+// } else if (x === 'en') {
 //     console.log('Sunday, Monday, Tuesday, Wednesday, Thursday, Saturday');
 // }
 // else 
@@ -41,8 +41,8 @@ console.log(days[language]);
 // Вторая задача:
 let namePerson = prompt('Имя пользователя');
 
-let input = (namePerson == 'Артём') ? 'Директор' :
-  (namePerson == 'Максим') ? 'Преподаватель' :
+let input = (namePerson === 'Артём') ? 'Директор' :
+  (namePerson === 'Максим') ? 'Преподаватель' :
   (namePerson) ? 'Студент' :
   '';
 console.log( input );

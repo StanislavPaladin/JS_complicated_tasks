@@ -1,19 +1,24 @@
-'use strict';
+let changeColorBtn = document.getElementById('change');
+let wrapper = document.querySelector('.wrapper');
+let h1 = document.querySelector('h1');
 
 
-let week = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
-  today = new Date().getDay() - 1;
-
-for (let i = 0; i < week.length; i++) {
-  if (i == today) {
-    if (week[i] === 'Сб' || week[i] === 'Вс') {
-      document.write(`<p><b><i>${week[i]}</i></b></p>`);
-    } else {
-      document.write(`<p><b>${week[i]}</b></p>`);
+changeColorBtn.onclick = function() {
+    let symbols = '0123456789ABCDEF';
+    let color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += symbols[Math.floor(Math.random() * 16)];
     }
-  } else if (week[i] === 'Сб' || week[i] === 'Вс') {
-    document.write(`<p><i>${week[i]}</i></p>`);
-  } else {
-    document.write(`<p>${week[i]}</p>`);
+    h1.innerHTML = color;
+    wrapper.style.backgroundColor = color;
+    return color;
+  };
+  
+  
+  
+  function setRandomColor() {
+    $("#colorpad").css("background-color", getRandomColor());
   }
-}
+
+
+

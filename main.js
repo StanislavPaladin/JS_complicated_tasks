@@ -1,59 +1,41 @@
-document.addEventListener("DOMContentLoaded", function(event){
-'use strict';
-let newDiv = document.createElement('div');
+'use scrict';
 
-function DomElement(selector, height, width, bg, fontSize){
-    this.selector = selector;
-    this.height = height;
-    this.width = width;
-    this.bg = bg;
-    this.fontSize = fontSize;
-}
+const block = document.querySelector('.block');
+const reset = document.querySelector('.reset');
+const stop = document.querySelector('.stop');
 
-DomElement.prototype.create = function(){
-    let newDiv = document.createElement('div');
-    newDiv.innerHTML = '';
+let count =0;
+let animation;
+let stopBtn = false;
 
-    newDiv.style.cssText=`height:${this.height};
-    width: ${this.width};
-     background: ${this.bg};
-    position: absolute;
-  `;
 
-    if(Array.from(this.selector)[0] === '#'){
-    newDiv.id = this.selector;
-} else if (Array.from(this.selector)[0] === '.'){
-    newDiv.className = (this.selector);
-}
-    document.body.append(newDiv);
-    
-    let count = 0;
-    let countTop = 0;
-    window.onkeydown = (e) => {
-       
-        if(e.keyCode === 39) {
-            count = count + 10;
-            newDiv.style.marginLeft = count + 'px';
-        } else if (e.keyCode === 37 && count >= 0) {
-            count = count - 10;
-            newDiv.style.marginLeft = count + 'px';
-        } else if (e.keyCode === 38  && countTop >= 0) {
-            countTop = countTop - 10;
-            newDiv.style.marginTop = countTop + 'px';
-        } else if (e.keyCode === 40) {
-            countTop = countTop + 10;
-            newDiv.style.marginTop = countTop + 'px';
-        }
-    
-    };
-   
-    
+
+
+const getAnimated = () => {
+    animation = requestAnimationFrame(getAnimated);
+    count++;
+    if (count < 750) {
+        block.style.left = count*2 + 'px';
+    } else {
+        cancelAnimationFrame(animation);
+    }
 };
 
-let newEl = new DomElement('.testid', '100px', '100px', 'green', '40px');
 
 
-    newEl.create();
+reset.addEventListener('click', () => {
+    cancelAnimationFrame(animation);
+    count = 0;
+    block.style.top = 0;
+    block.style.left = 0;
+});
 
-
+stop.addEventListener('click', () => {
+    if (!stopBtn) {
+        animation = requestAnimationFrame(getAnimated);
+        stopBtn = true;
+      } else {
+        cancelAnimationFrame(animation);
+        stopBtn = false;
+      }
 });
